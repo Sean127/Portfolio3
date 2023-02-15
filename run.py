@@ -93,3 +93,15 @@ def return_answers():
     print(f"Q5: {q5_answers_entered}\n")
 
     print("Goodbye!!!")
+
+def main():
+    """
+    Runs all main functions
+    """
+
+    data = get_answers()
+    update_worksheet(data, 'Answers')
+    return_answers()
+
+
+main()
