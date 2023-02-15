@@ -71,4 +71,25 @@ def update_worksheet(data,worksheet):
     worksheet_to_update.append_row(data)
     print("Portfolio worksheet updated successfully.\n")
 
-    
+def return_answers():
+    """
+    Retrieves the data entered by the user by obtaining the last row of the google doc 
+    and informs the user of their answer.
+    """
+
+    q1_answers_entered = SHEET.worksheet('Answers').col_values(1)[-1]
+    q2_answers_entered = SHEET.worksheet('Answers').col_values(2)[-1]
+    q3_answers_entered = SHEET.worksheet('Answers').col_values(3)[-1]
+    q4_answers_entered = SHEET.worksheet('Answers').col_values(4)[-1]
+    q5_answers_entered = SHEET.worksheet('Answers').col_values(5)[-1]
+
+    print("Thank you for your cooperation.")
+    print("For your information, the answers you gave were:\n")
+
+    print(f"Q1: {q1_answers_entered}")
+    print(f"Q2: {q2_answers_entered}")
+    print(f"Q3: {q3_answers_entered}")
+    print(f"Q4: {q4_answers_entered}")
+    print(f"Q5: {q5_answers_entered}\n")
+
+    print("Goodbye!!!")
