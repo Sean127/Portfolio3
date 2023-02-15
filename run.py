@@ -60,3 +60,15 @@ def validate_answers(answer_data):
         return False
         
     return True       
+
+
+def update_worksheet(data,worksheet):
+    """
+    Takes all inputed answers and uploads them to the linked worksheet
+    """
+    print("Updating Portfolio worksheet with answers given. Please wait \n")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print("Portfolio worksheet updated successfully.\n")
+
+    
