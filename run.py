@@ -36,5 +36,27 @@ def get_answers():
         q5_data = input("Q5: Do you have a tattoo? \n")
         answer_data.append(q5_data)
 
+        if validate_answers(answer_data) == True:
+            break
+
     return answer_data
-    
+
+def validate_answers(answer_data):
+    """
+    Validates the inputs of the user by ensuring all inputs are either "yes" or "no"
+    Raises a ValueError is an incorrect value is entered and repeats get_answers()
+    """
+
+    try:
+        [answer for  answer in answer_data]
+        if ("yes" or "no") not in answer_data :
+            answer_data.clear()
+            raise ValueError(
+                "Answer entered not yes or no. Please try again.\n"
+            )
+
+    except ValueError as e:
+        print(f"Invalid data: {e}")
+        return False
+        
+    return True       
